@@ -208,11 +208,25 @@ button {
   padding: 0 20px;
 }
 
+.gannet-header {
+  background-color: var(--color-primary);
+  padding: 0.5rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .gannet-title {
   text-align: center;
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-text);
+  font-weight: 500;
 }
 
 .gannet-form {
@@ -279,4 +293,16 @@ button {
   .gannet-form-buttons button {
     width: 100%;
   }
+}
+
+/* Ensure the logo has proper sizing */
+.logo-container {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.gannet-logo {
+  height: 200px;
+  width: auto;
 }

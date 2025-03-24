@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bird silhouette for GANNET -->
+  <path d="M20 5 C25 0, 35 5, 40 10 C45 15, 45 20, 40 25 C35 30, 20 25, 15 20 C10 15, 15 10, 20 5 Z" fill="white"/>
+  <path d="M45 15 C50 10, 60 15, 65 20 C70 25, 70 30, 65 35 C60 40, 45 35, 40 30 C35 25, 40 20, 45 15 Z" fill="white"/>
+  
+  <!-- Text "GANNET" -->
+  <path d="M75 25 L85 25 L85 15 L75 15 L75 25 Z" fill="white"/>
+  <path d="M90 25 L100 25 L100 15 L90 15 L90 25 Z" fill="white"/>
+</svg>
