@@ -19,7 +19,7 @@ const GeneratedPrompt: React.FC<GeneratedPromptProps> = ({ formData }) => {
     let prompt = `As a ${role}, I require detailed information on ${formatList(sectors)} in ${formatList(countries)} for the ${timeframe}. `;
     prompt += `This information should include key trends, challenges, and relevant data points. `;
     prompt += `Additionally, please include analysis on recent developments, potential future implications, and critical indicators to monitor. `;
-    prompt += `Please present the findings in the format of a ${outputFormat.split(':')[0]}, ensuring clarity, conciseness, and actionable insights.`;
+    prompt += `Please present the findings in the format of a ${outputFormat}, ensuring clarity, conciseness, and actionable insights.`;
   
     
     if (specificQuestion) {
