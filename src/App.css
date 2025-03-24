@@ -15,17 +15,173 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+main {
+  padding: 20px;
+}
+
+.prompt-builder-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4285f4;
+  transition: width 0.3s ease;
+}
+
+.step-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.step-container h2 {
+  margin-top: 0;
+  color: #4285f4;
+  font-size: 1.5rem;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+.option input {
+  margin-right: 10px;
+}
+
+.option label {
+  cursor: pointer;
+}
+
+.specific-question, .generated-prompt {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.generated-prompt {
+  background-color: #f8f9fa;
+  border: 2px solid #4285f4;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-container-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.button-next {
+  background-color: #4285f4;
+  color: white;
+}
+
+.button-next:hover {
+  background-color: #3b78e7;
+}
+
+.button-back {
+  background-color: #f1f3f4;
+  color: #5f6368;
+}
+
+.button-back:hover {
+  background-color: #e8eaed;
+}
+
+.button-disabled {
+  background-color: #f1f3f4;
+  color: #bdc1c6;
+  cursor: not-allowed;
+}
+
+.button-restart {
+  background-color: #34a853;
+  color: white;
+}
+
+.button-restart:hover {
+  background-color: #2d9249;
+}
+
+.copy-button {
+  background-color: #4285f4;
+  color: white;
+}
+
+.copy-button:hover {
+  background-color: #3b78e7;
+}
+
+.error-message {
+  color: #d93025;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fce8e6;
+  border-radius: 4px;
+  text-align: left;
+  font-weight: 500;
 }
 
 @keyframes App-logo-spin {
