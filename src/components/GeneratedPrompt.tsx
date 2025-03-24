@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box, Heading, Text, Textarea, Button, Flex } from '@chakra-ui/react';
 import { FormData } from '../types';
 
 interface GeneratedPromptProps {
@@ -44,27 +43,24 @@ const GeneratedPrompt: React.FC<GeneratedPromptProps> = ({ formData }) => {
   };
 
   return (
-    <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
-      <Heading size="md" mb={4}>Step 7: Generated Prompt</Heading>
-      <Text mb={4}>
+    <div className="gannet-card">
+      <h2 className="gannet-step-title">Step 7: Generated Prompt</h2>
+      <p className="gannet-step-description">
         Your customized prompt for the GANNET Virtual Assistant is ready:
-      </Text>
-      <Textarea
+      </p>
+      
+      <textarea
         value={generatePrompt()}
         readOnly
-        minHeight="150px"
-        mb={4}
-        p={3}
-        borderColor="blue.200"
-        borderWidth="2px"
-        fontSize="md"
-      />
-      <Flex justifyContent="flex-end">
-        <Button colorScheme="blue" onClick={handleCopyToClipboard}>
+        className="gannet-textarea gannet-generated-prompt"
+      ></textarea>
+      
+      <div className="gannet-button-container">
+        <button className="gannet-button" onClick={handleCopyToClipboard}>
           Copy to Clipboard
-        </Button>
-      </Flex>
-    </Box>
+        </button>
+      </div>
+    </div>
   );
 };
 

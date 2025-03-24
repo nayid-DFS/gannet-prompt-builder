@@ -1,6 +1,4 @@
 import React from 'react';
-import { Box, Heading, Text, Flex } from '@chakra-ui/react';
-import { Checkbox, CheckboxGroup } from '@chakra-ui/checkbox';
 import { FormData, countries } from '../types';
 
 interface CountrySelectionProps {
@@ -9,31 +7,41 @@ interface CountrySelectionProps {
 }
 
 const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormData }) => {
-  const handleCountryChange = (values: (string | number)[]) => {
-    const selectedCountries = values as string[];
-    setFormData({ ...formData, countries: selectedCountries });
+  const handleCountryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+    
+    if (isChecked) {
+      setFormData({ ...formData, countries: [...formData.countries, value] });
+    } else {
+      setFormData({ 
+        ...formData, 
+        countries: formData.countries.filter(country => country !== value) 
+      });
+    }
   };
 
   return (
-    <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
-      <Heading size="md" mb={4}>Step 2: Geographic Focus</Heading>
-      <Text mb={4}>Select the country or countries of interest:</Text>
-      <Box maxH="300px" overflowY="auto" p={2}>
-        <CheckboxGroup 
-          colorScheme="blue"
-          onChange={handleCountryChange}
-          value={formData.countries}
-        >
-          <Flex direction="column" gap={2}>
-            {countries.map((country) => (
-              <Checkbox key={country} value={country}>
-                {country}
-              </Checkbox>
-            ))}
-          </Flex>
-        </CheckboxGroup>
-      </Box>
-    </Box>
+    <div className="gannet-card">
+      <h2 className="gannet-step-title">Step 2: Geographic Focus</h2>
+      <p className="gannet-step-description">Select the country or countries of interest:</p>
+      
+      <div className="gannet-checkbox-scroll">
+        {countries.map((country) => (
+          <label key={country} className="gannet-checkbox-label">
+            <input
+              type="checkbox"
+              name="country"
+              value={country}
+              checked={formData.countries.includes(country)}
+              onChange={handleCountryChange}
+              className="gannet-checkbox-input"
+            />
+            {country}
+          </label>
+        ))}
+      </div>
+    </div>
   );
 };
 

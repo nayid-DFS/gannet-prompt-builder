@@ -1,6 +1,4 @@
 import React from 'react';
-import { Box, Heading, Text, Flex } from '@chakra-ui/react';
-import { Checkbox, CheckboxGroup } from '@chakra-ui/checkbox';
 import { FormData, sectors } from '../types';
 
 interface SectorSelectionProps {
@@ -9,31 +7,41 @@ interface SectorSelectionProps {
 }
 
 const SectorSelection: React.FC<SectorSelectionProps> = ({ formData, setFormData }) => {
-  const handleSectorChange = (values: (string | number)[]) => {
-    const selectedSectors = values as string[];
-    setFormData({ ...formData, sectors: selectedSectors });
+  const handleSectorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+    
+    if (isChecked) {
+      setFormData({ ...formData, sectors: [...formData.sectors, value] });
+    } else {
+      setFormData({ 
+        ...formData, 
+        sectors: formData.sectors.filter(sector => sector !== value) 
+      });
+    }
   };
 
   return (
-    <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
-      <Heading size="md" mb={4}>Step 3: Sector Focus</Heading>
-      <Text mb={4}>Select your humanitarian sector(s) of interest:</Text>
-      <Box maxH="300px" overflowY="auto" p={2}>
-        <CheckboxGroup 
-          colorScheme="blue"
-          onChange={handleSectorChange}
-          value={formData.sectors}
-        >
-          <Flex direction="column" gap={2}>
-            {sectors.map((sector) => (
-              <Checkbox key={sector} value={sector}>
-                {sector}
-              </Checkbox>
-            ))}
-          </Flex>
-        </CheckboxGroup>
-      </Box>
-    </Box>
+    <div className="gannet-card">
+      <h2 className="gannet-step-title">Step 3: Sector Focus</h2>
+      <p className="gannet-step-description">Select your humanitarian sector(s) of interest:</p>
+      
+      <div className="gannet-checkbox-group">
+        {sectors.map((sector) => (
+          <label key={sector} className="gannet-checkbox-label">
+            <input
+              type="checkbox"
+              name="sector"
+              value={sector}
+              checked={formData.sectors.includes(sector)}
+              onChange={handleSectorChange}
+              className="gannet-checkbox-input"
+            />
+            {sector}
+          </label>
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -192,3 +192,91 @@ button {
     transform: rotate(360deg);
   }
 }
+
+/* Additional styles for the Gannet app */
+
+.gannet-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gannet-title {
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.gannet-form {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.gannet-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Add styles for form elements */
+.gannet-input, .gannet-select, .gannet-checkbox, .gannet-radio {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: 1px solid var(--color-highlight);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+
+.gannet-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.gannet-checkbox-label, .gannet-radio-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.gannet-checkbox-input, .gannet-radio-input {
+  margin-right: 0.5rem;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .gannet-form {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gannet-title {
+    font-size: 1.5rem;
+  }
+  
+  .gannet-form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .gannet-form-buttons button {
+    width: 100%;
+  }
+}

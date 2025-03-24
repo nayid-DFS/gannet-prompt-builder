@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Box, Button, Flex } from '@chakra-ui/react';
 import RoleSelection from './RoleSelection';
 import CountrySelection from './CountrySelection';
 import SectorSelection from './SectorSelection';
@@ -77,36 +76,39 @@ const PromptBuilderForm: React.FC = () => {
   };
 
   return (
-    <Box maxW="800px" mx="auto" p={5}>
-      <Box w="100%" h="8px" bg="gray.100" borderRadius="md" mb={10}>
-        <Box w={`${(step / totalSteps) * 100}%`} h="100%" bg="blue.500" borderRadius="md" />
-      </Box>
+    <div className="gannet-form">
+      <div className="gannet-progress-bg">
+        <div 
+          className="gannet-progress-bar" 
+          style={{ width: `${(step / totalSteps) * 100}%` }}
+        ></div>
+      </div>
       
       {renderStep()}
       
-      <Flex mt={5} justifyContent="space-between">
-        <Button
-          colorScheme="gray"
+      <div className="gannet-form-buttons">
+        <button
+          className={`gannet-button-outline ${step === 1 ? 'disabled' : ''}`}
           onClick={handleBack}
           disabled={step === 1}
         >
           Back
-        </Button>
+        </button>
         
         {step < totalSteps ? (
-          <Button colorScheme="blue" onClick={handleNext}>
+          <button className="gannet-button" onClick={handleNext}>
             Next
-          </Button>
+          </button>
         ) : (
-          <Button 
-            colorScheme="green" 
+          <button 
+            className="gannet-button-green"
             onClick={() => setStep(1)}
           >
             Start Over
-          </Button>
+          </button>
         )}
-      </Flex>
-    </Box>
+      </div>
+    </div>
   );
 };
 
