@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Gannet Prompt Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A specialized tool for humanitarian aid professionals to generate structured AI prompts for gathering critical information about regions, crises, and humanitarian needs.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The Gannet Prompt Builder is designed to help humanitarian workers, analysts, field officers, and other stakeholders easily create tailored prompts to get the most relevant information from AI systems. The application guides users through a step-by-step process to construct prompts that specify:
 
-### `npm start`
+- Professional role (Humanitarian Analyst, Country Manager, Field Worker, etc.)
+- Countries or regions of interest
+- Relevant sectors (Food Security, Health, WASH, Protection, etc.)
+- Timeframe (from the past 24 hours to historical context)
+- Preferred output format (Executive Summary, Bullet Points, Tabular Format, Detailed Analysis)
+- Specific questions or areas of focus
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Intuitive step-by-step form interface
+- Comprehensive selection of countries, humanitarian sectors, and roles
+- Multiple output format options to match your needs
+- Ability to specify custom questions
+- One-click copy to clipboard functionality
+- Real-time prompt preview
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (v14 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/gannet-prompt-builder.git
+   cd gannet-prompt-builder
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-### `npm run eject`
+3. Start the development server:
+   ```
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Select your professional role
+2. Choose relevant countries or regions
+3. Select humanitarian sectors of interest
+4. Specify the timeframe for the information
+5. Choose your preferred output format
+6. (Optional) Add specific questions or focus areas
+7. Generate your prompt and copy it to use with your preferred AI system
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+- React.js
+- TypeScript
+- Chakra UI
+- Framer Motion
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
