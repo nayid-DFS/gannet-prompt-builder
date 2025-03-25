@@ -67,7 +67,7 @@ const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormDa
           flexWrap: 'wrap',
           gap: '0.5rem',
           padding: '0.5rem',
-          backgroundColor: '#f5f5f5',
+          backgroundColor: '#1a222f',
           borderRadius: '4px',
           minHeight: '2.5rem'
         }}>
@@ -79,7 +79,7 @@ const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormDa
                 display: 'inline-flex',
                 alignItems: 'center',
                 padding: '0.25rem 0.75rem',
-                backgroundColor: '#e0e0e0',
+                backgroundColor: '#10151c',
                 borderRadius: '16px',
                 fontSize: '0.875rem',
                 cursor: 'pointer',
@@ -88,10 +88,10 @@ const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormDa
               }}
               onClick={() => handleRemoveCountry(country)}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#d0d0d0';
+                e.currentTarget.style.backgroundColor = '#88fca4';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#e0e0e0';
+                e.currentTarget.style.backgroundColor = '#10151c';
               }}
             >
               {country}
@@ -109,7 +109,7 @@ const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormDa
           onChange={(e) => setSearchQuery(e.target.value)}
           className="gannet-search-input"
           style={{
-            width: '100%',
+            width: '33%',
             padding: '0.5rem',
             border: '1px solid #ddd',
             borderRadius: '4px',
