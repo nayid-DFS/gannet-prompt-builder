@@ -41,6 +41,13 @@ const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormDa
     }
   };
 
+  const handleRemoveCountry = (countryToRemove: string) => {
+    setFormData({
+      ...formData,
+      countries: formData.countries.filter(country => country !== countryToRemove)
+    });
+  };
+
   const filteredCountries = useMemo(() => {
     if (!searchQuery) return countries;
     return countries.filter(country => 
@@ -53,6 +60,47 @@ const CountrySelection: React.FC<CountrySelectionProps> = ({ formData, setFormDa
       <h2 className="gannet-step-title">Step 2: Geographic Focus</h2>
       <p className="gannet-step-description">Select the country or countries of interest:</p>
       
+      {formData.countries.length > 0 && (
+        <div className="gannet-selected-tags" style={{ 
+          marginBottom: '1rem',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '0.5rem',
+          padding: '0.5rem',
+          backgroundColor: '#f5f5f5',
+          borderRadius: '4px',
+          minHeight: '2.5rem'
+        }}>
+          {formData.countries.map((country) => (
+            <span
+              key={country}
+              className="gannet-tag"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '0.25rem 0.75rem',
+                backgroundColor: '#e0e0e0',
+                borderRadius: '16px',
+                fontSize: '0.875rem',
+                cursor: 'pointer',
+                userSelect: 'none',
+                transition: 'background-color 0.2s'
+              }}
+              onClick={() => handleRemoveCountry(country)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#d0d0d0';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#e0e0e0';
+              }}
+            >
+              {country}
+              <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem' }}>×</span>
+            </span>
+          ))}
+        </div>
+      )}
+
       <div className="gannet-search-container" style={{ marginBottom: '1rem' }}>
         <input
           type="text"
