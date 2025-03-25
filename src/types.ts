@@ -45,6 +45,7 @@ export const outputFormats = [
 ];
 
 export const countries = [
+  'Global',
   'Afghanistan', 'Albania', 'Algeria', 'Angola', 'Argentina', 'Armenia', 'Australia', 
   'Azerbaijan', 'Bangladesh', 'Belarus', 'Benin', 'Bolivia', 'Bosnia and Herzegovina', 
   'Botswana', 'Brazil', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 
