@@ -40,7 +40,7 @@ export const timeframes = [
 export const outputFormats = [
   'Executive Summary: 3-5 concise paragraphs highlighting the most critical points',
   'Bullet Points: Categorized list of clear, actionable items for quick scanning',
-  'Tabular Format: Organized data with clear headers for easy comparison of metrics',
+  'Tabular Format: Organized data with clear headers for easy comparison of metrics (Coming Soon)',
   'Detailed Analysis: Comprehensive report with sections, subsections, and supporting evidence'
 ];
 

@@ -11,6 +11,8 @@ const OutputFormatSelection: React.FC<OutputFormatSelectionProps> = ({ formData,
     setFormData({ ...formData, outputFormat: e.target.value });
   };
 
+  const isTabularFormat = (format: string) => format.includes('Tabular Format');
+
   return (
     <div className="gannet-card">
       <h2 className="gannet-step-title">Step 5: Output Format Preference</h2>
@@ -18,7 +20,11 @@ const OutputFormatSelection: React.FC<OutputFormatSelectionProps> = ({ formData,
       
       <div className="gannet-radio-group">
         {outputFormats.map((format) => (
-          <label key={format} className="gannet-radio-label">
+          <label 
+            key={format} 
+            className={`gannet-radio-label ${isTabularFormat(format) ? 'disabled' : ''}`}
+            style={isTabularFormat(format) ? { opacity: 0.5, cursor: 'not-allowed' } : undefined}
+          >
             <input
               type="radio"
               name="outputFormat"
@@ -26,6 +32,7 @@ const OutputFormatSelection: React.FC<OutputFormatSelectionProps> = ({ formData,
               checked={formData.outputFormat === format}
               onChange={handleOutputFormatChange}
               className="gannet-radio-input"
+              disabled={isTabularFormat(format)}
             />
             {format}
           </label>
